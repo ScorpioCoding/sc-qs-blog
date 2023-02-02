@@ -1,0 +1,57 @@
+<div class="container">
+
+  <button class="tablink" onclick="openPage('BlogNew', this, 'brown')" id="defaultOpen">Blog New Post</button>
+
+  <div id="BlogNew" class="tabcontent">
+
+    <h3>NEW BLOG POST</h3>
+    <form class="formContainer" action="" method="post">
+      <div class="group grid grid3">
+
+        <label for="author" class="left">Author
+          <input type="text" name="author" id="author" value="<?= $data['author'] ?>">
+        </label>
+        <label for="imageA" class="middle">Author Image Url
+          <input type="text" name="imageA" id="imageA" value="<?= $data['imageA'] ?>">
+        </label>
+        <label for="date" class="right">Date
+          <input type="text" name="date" id="date" value="<?= $data['date'] ?>">
+        </label>
+      </div>
+
+      <div class="group grid grid1">
+        <label for="title" class="left">Title
+          <input type="text" name="title" id="title" value="<?= $data['title'] ?>">
+        </label>
+        <select id="status" class="right">
+          <option value="draft">Draft</option>
+          <option value="publish">Publish</option>
+        </select>
+      </div>
+      <div class="group grid grid1">
+        <label for="slug" class="left">Slug
+          <input type="text" name="slug" id="slug" value="<?= $data['slug'] ?>" readonly>
+        </label>
+        <input type="button" class="right btn btn-fern" style="height: 5em;" value="Create Slug" onclick="createSlug()">
+      </div>
+
+      <div class="group grid grid2">
+        <label for="imageL" class="left">Landscape Image Url
+          <input type="text" name="imageL" id="imageL" value="<?= $data['imageL'] ?>">
+        </label>
+        <label for="imageP" class="right">Portrait Image Url
+          <input type="text" name="imageP" id="imageP" value="<?= $data['imageP'] ?>">
+        </label>
+      </div>
+
+      <div class="group grid">
+        <textarea name="post" id="post" cols="30" rows="10"></textarea>
+      </div>
+      <div class="group grid grid1">
+        <input class="right btn btn-fern" style="height: 5em;" type="submit" value="INSERT">
+      </div>
+    </form>
+
+  </div>
+
+</div>

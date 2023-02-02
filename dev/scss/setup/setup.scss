@@ -1,0 +1,48 @@
+@use '../core/abstracts';
+@use '../core/abstracts/mixins' as mix;
+@use '../core/base';
+@use '../core/components';
+
+@use '../core/layouts';
+
+//
+
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+
+  &:hover {
+    background-color: #777;
+  }
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  padding: 100px 20px;
+  height: 100%;
+  width: 100%;
+}
+
+#User {
+  background-color: brown;
+}
+
+.group {
+  padding-bottom: 2em;
+  width: 100%;
+}
+
+.float {
+  float: right;
+}

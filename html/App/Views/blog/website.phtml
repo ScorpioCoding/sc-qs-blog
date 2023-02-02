@@ -1,0 +1,27 @@
+<div class="container">
+
+  <button class="tablink" onclick="openPage('WebSite', this, 'brown')" id="defaultOpen">WebSite</button>
+
+  <div id="WebSite" class="tabcontent">
+
+    <h3>THE WEBSITE SETUP PAGE</h3>
+    <form class="formContainer" action="/setup/website/info" method="post">
+      <div class="group">
+        <label for="domain">WebSite Domain Name
+          <input type="text" name="domain" id="domain" value="<?= $data['domain'] ?>">
+        </label>
+        <label for="url">Website URL
+          <input type="text" name="url" id="url" value="<?= $data['url'] ?>">
+        </label>
+        <label for="image">Website Banner Image
+          <input type="text" name="image" id="image" value="<?= $data['image'] ?>">
+        </label>
+      </div>
+      <div class="group">
+        <input class="float" type="submit" value="UPDATE">
+      </div>
+    </form>
+
+  </div>
+
+</div>

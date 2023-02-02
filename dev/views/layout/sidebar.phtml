@@ -1,0 +1,28 @@
+<div id="mySideNav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <? if ($data['permission'] === 'super') : ?>
+  <div class="sub">
+    <h3>Setup</h3>
+    <a href="/setup/tables" target="iPage" onclick="closeNav()">Tables</a>
+    <a href=" /setup/company" target="iPage" onclick="closeNav()">Company</a>
+    <a href="/setup/Website" target="iPage" onclick="closeNav()">Website</a>
+  </div>
+  <? endif ?>
+
+  <div class="sub">
+    <h3>Blog</h3>
+    <a href="/blog/list" target="iPage" onclick="closeNav()">List Posts</a>
+    <a href="/blog/new" target="iPage" onclick="closeNav()">New Post</a>
+    <a href="/gallery" target="iPage" onclick="closeNav()">Gallery</a>
+  </div>
+
+
+
+
+
+  <a href="#" target="iPage" onclick="closeNav()">About</a>
+  <a href="#" target="iPage" onclick="closeNav()">Services</a>
+  <a href="#" target="iPage" onclick="closeNav()">Clients</a>
+  <a href="#" target="iPage" onclick="closeNav()">Contact</a>
+</div>

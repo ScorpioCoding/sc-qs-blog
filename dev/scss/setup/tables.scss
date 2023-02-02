@@ -1,0 +1,26 @@
+@use '../core/abstracts';
+@use '../core/abstracts/mixins' as mix;
+@use '../core/base';
+@use '../core/components';
+
+@use '../core/layouts';
+
+#Tables {
+  background-color: brown;
+}
+
+.grid1 {
+  display: grid;
+  grid-template-columns: 0.5em 2fr 1fr 0.5em;
+  grid-template-areas: '. left right .';
+  gap: 1em;
+
+  .left {
+    grid-area: left;
+    text-align: left;
+    font-size: var(--fs-600);
+  }
+  .right {
+    grid-area: right;
+  }
+}

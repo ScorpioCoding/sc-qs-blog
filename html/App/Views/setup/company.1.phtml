@@ -1,0 +1,71 @@
+<div class="container">
+
+  <button class="tablink" onclick="openPage('Company', this, 'brown')" id="defaultOpen">Company</button>
+  <button class="tablink" onclick="openPage('Address', this, 'brown')">Address</button>
+
+  <div id="Company" class="tabcontent">
+
+    <h3>COMPANY INFO PAGE</h3>
+    <form class="formContainer" action="/setup/company/info" method="post">
+
+      <div class="group">
+        <label for="name">Company Name
+          <input type="text" name="name" id="name" value="<?= $data['name'] ?>">
+        </label>
+
+        <label for="slogan">Company Slogan
+          <input type="text" name="slogan" id="slogan" value="<?= $data['slogan'] ?>">
+        </label>
+      </div>
+      <div class="group">
+        <label for="email">Email
+          <input type="text" name="email" id="email" value="<?= $data['email'] ?>">
+        </label>
+        <label for="phone">Phone
+          <input type="text" name="phone" id="phone" value="<?= $data['phone'] ?>">
+        </label>
+        <label for="vat">VAT
+          <input type="text" name="vat" id="vat" value="<?= $data['vat'] ?>">
+        </label>
+
+      </div>
+      <div class="group">
+        <input class="float" type="submit" value="UPDATE">
+      </div>
+    </form>
+  </div>
+
+
+
+  <div id="Address" class="tabcontent">
+    <h3>COMPANY ADDRESS PAGE</h3>
+    <form class="formContainer" action="/setup/company/address" method="post">
+      <div class="group">
+        <label for="address">Address
+          <input type="text" name="address" id="address" value="<?= $data['address'] ?>">
+        </label>
+
+        <label for="postal">Postal Code
+          <input type="text" name="postal" id="postal" value="<?= $data['postal'] ?>">
+        </label>
+
+        <label for="city">City
+          <input type="text" name="city" id="city" value="<?= $data['city'] ?>">
+        </label>
+
+        <label for="state">State / Province
+          <input type="text" name="state" id="state" value="<?= $data['state'] ?>">
+        </label>
+
+        <label for="country">Country
+          <input type="text" name="country" id="country" value="<?= $data['country'] ?>">
+        </label>
+
+      </div>
+      <div class="group">
+        <input class="float" type="submit" value="UPDATE">
+      </div>
+    </form>
+
+  </div>
+</div>

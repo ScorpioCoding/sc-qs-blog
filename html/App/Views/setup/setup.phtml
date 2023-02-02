@@ -1,0 +1,51 @@
+<button class="tablink" onclick="openPage('User', this, 'brown')" id="defaultOpen">Admin User</button>
+
+<div id="User" class="tabcontent">
+
+  <h3>THE ADMIN USER SETUP PAGE</h3>
+  <?php if (!empty($data['errorList'])) : ?>
+  <div>
+    <p>Requirements:</p>
+    <ul>
+      <?php foreach ($data['errorList'] as $value) : ?>
+      <li><?= $value ?></li>
+      <?php endforeach ?>
+    </ul>
+  </div>
+  <?php endif ?>
+  <form class="formContainer" action="" method="POST">
+    <div class="group">
+      <label for="username">
+        <span>*</span>Admin User Name
+        <input type="text" name="name" id="name" placeholder="Admin User Name" value="<?= $data['name'] ?>"
+          <?= ($data['readonly']) ? 'readonly' : ''; ?>>
+      </label>
+      <label for="email">
+        <span>*</span>Admin User Email
+        <input type="text" name="email" id="email" placeholder="Admin User Email" value="<?= $data['email'] ?>"
+          <?= ($data['readonly']) ? 'readonly' : ''; ?>>
+      </label>
+      <label for="permission">
+        <span>*</span>Admin User Permission
+        <input type="text" name="permission" id="permission" readonly value="super">
+      </label>
+    </div>
+    <div class="group">
+      <label for="password">
+        <span>*</span>Admin User Password
+        <input type="password" name="password" id="password" <?= ($data['readonly']) ? 'readonly' : ''; ?>>
+      </label>
+      <label for="passwordconfirm">
+        <span>*</span>Admin User Password Confirmation
+        <input type="password" name="passwordconfirm" id="passwordconfirm"
+          <?= ($data['readonly']) ? 'readonly' : ''; ?>>
+      </label>
+    </div>
+    <div class="group">
+      <?php if ($data['readonly'] == false) : ?>
+      <input class="float" type="submit" value="SAVE">
+      <?php endif ?>
+    </div>
+  </form>
+
+</div>

@@ -1,0 +1,54 @@
+<main>
+
+  <button class="tablink" onclick="openPage('Draft', this, 'brown')" id="defaultOpen">Blog List Draft</button>
+  <button class="tablink" onclick="openPage('Publish', this, 'brown')">Blog List Publish</button>
+
+  <div id="Draft" class="tabcontent">
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>title</th>
+          <th>actions</th>
+        </tr>
+      </thead>
+      <? foreach ($data['draft'] as $draft) : ?>
+      <tr>
+        <td><?= $draft['id'] ?></td>
+        <td><?= $draft['title'] ?></td>
+        <td>
+          <a href="/blog/edit/<?= $draft['id'] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+          <a href="/blog/delete/<?= $draft['id'] ?>"><i class="fa-solid fa-trash"></i></a>
+        </td>
+      </tr>
+      <? endforeach ?>
+
+    </table>
+  </div>
+
+
+
+  <div id="Publish" class="tabcontent">
+    <table>
+      <thead>
+        <tr>
+          <th class="id">id</th>
+          <th class="title">title</th>
+          <th class="actions">actions</th>
+        </tr>
+      </thead>
+      <? foreach ($data['publish'] as $pub) : ?>
+      <tr>
+        <td><?= $pub['id'] ?></td>
+        <td><?= $pub['title'] ?></td>
+        <td>
+          <a href="/blog/edit/<?= $pub['id'] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+        </td>
+      </tr>
+      <? endforeach ?>
+
+    </table>
+  </div>
+
+
+</main>

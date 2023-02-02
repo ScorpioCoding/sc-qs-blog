@@ -1,0 +1,14 @@
+@use '../core/abstracts';
+@use '../core/abstracts/mixins' as mix;
+@use '../core/base';
+@use '../core/components';
+
+@use '../core/layouts';
+
+#Company {
+  background-color: brown;
+}
+
+#Address {
+  background-color: brown;
+}

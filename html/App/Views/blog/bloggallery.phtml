@@ -1,0 +1,55 @@
+<main>
+
+  <button class="tablink" onclick="openPage('Gallery', this, 'brown')" id="defaultOpen">Blog Gallery</button>
+  <button class="tablink" onclick="openPage('Upload', this, 'brown')">Blog Image Upload</button>
+
+  <div id="Gallery" class="tabcontent">
+
+    <?php if (!empty($data['flash'])) : ?>
+    <div>
+      <p>Message:</p>
+      <ul>
+        <? foreach ($data['flash'] as $msg) : ?>
+        <li><?= $msg ?></li>
+        <? endforeach ?>
+      </ul>
+    </div>
+    <?php endif ?>
+
+    <div class="gallery-container">
+      <? foreach ($data['gallery'] as $file) : ?>
+
+      <a href="#">
+        <div></div>
+        <h3><?= $file['title'] ?></h3>
+        <p><?= $file['description'] ?></p>
+        <small><?= $file['url'] ?></small>
+      </a>
+
+      <? endforeach ?>
+
+    </div>
+  </div>
+
+
+  <div id="Upload" class="tabcontent">
+    <div class="gallery-upload">
+      <form action="gallery/upload" method="post" enctype="multipart/form-data">
+
+        <input type="text" name="name" id="name" placeholder="File Name ..">
+        <input type="text" name="title" id="title" placeholder="Image Title ..">
+        <input type="text" name="description" id="description" placeholder="Image Description ..">
+        <input type="file" name="file" id="file">
+
+
+        <button class="btn btn-fern float" type="submit" name="submit">UPLOAD IMAGE TO GALLERY</button>
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+
+</main>
